@@ -15,7 +15,7 @@
 
   <!----------Header-->
   <nav class="navbar navbar-dark bg-dark">
-    <a href="javascript:;" class="navbar-brand">Join A Meeting</a>
+    <a href="javascript:;" class="navbar-brand">Promote A Meeting</a>
     <a href="index.html" class="navbar-brand">Home</a>
   </nav>
   <!------------------Header Image-->
@@ -55,29 +55,43 @@
   <!---------COrporate Form-->
   <div class="container corporate">
     <h3 class="text-center">Corporate Meeting</h3>
-    <form>
+    <form autocomplete="off" id="CorpData">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" id="name" placeholder="Enter Name">
+        <span id="corpname" class="text-danger font-weight-bold"></span>
       </div>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter Email Address">
+        <input type="text" class="form-control" id="email" placeholder="Enter Email Address">
+        <span id="corpemail" class="text-danger font-weight-bold"></span>
       </div>
       <div class="form-group">
         <label for="company">Company</label>
         <input type="text" class="form-control" id="company" placeholder="Enter Comapany Name">
+        <span id="corpcompany" class="text-danger font-weight-bold"></span>
       </div>
       <div class="form-group">
         <label for="mobile">Mobile</label>
-        <input type="text" class="form-control" id="mobile" placeholder="Enter Phone Number"
-          onkeypress="return isNumber()">
+        <input type="text" class="form-control" id="mobile" placeholder="Enter Phone Number">
+        <span id="corpmobile" class="text-danger font-weight-bold"></span>
       </div>
       <div class="form-group">
         <label for="category">Webinar Category</label>
-        <input type="text" class="form-control" id="category" placeholder="Enter Webinar">
+        <select class="form-control" id="category">
+          <option value="">Select a Category</option>
+          <option value="Finance">Finance</option>
+          <option value="Human Resource">Human Resource</option>
+          <option value="Well Being">Well Being</option>
+          <option value="Work Ethics">Work Ethics</option>
+          <option value="Counselling">Counselling</option>
+          <option value="Trade">Trade</option>
+          <option value="Sales">Sales</option>
+          <option value="Revival">Revival</option>
+        </select>
+        <span id="corpcategory" class="text-danger font-weight-bold"></span>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-primary" onclick="return corpValidation()">Submit</button>
     </form>
   </div>
 
@@ -86,24 +100,39 @@
     <h3 class="text-center">
       Individual Meeting
     </h3>
-    <form>
+    <form id="indiData">
       <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter Name">
+        <input type="text" class="form-control" id="Indname" placeholder="Enter Name">
+        <span id="names" class="text-danger font-weight-bold"></span>
       </div>
       <div class="form-group">
         <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter Email Address">
+        <input type="text" class="form-control" id="Indemail" placeholder="Enter Email Address">
+        <span id="emails" class="text-danger font-weight-bold"></span>
       </div>
       <div class="form-group">
         <label for="mobile">Mobile</label>
-        <input type="mobile" class="form-control" id="mobile" placeholder="Enter Phone Number" onkeypress="isNumber()">
+        <input type="mobile" class="form-control" id="Indmobile" placeholder="Enter Phone Number"
+          onkeypress="isNumber()">
+        <span id="mobiles" class="text-danger font-weight-bold"></span>
       </div>
       <div class="form-group">
         <label for="category">Webinar Category</label>
-        <input type="text" class="form-control" id="category" placeholder="Enter Webinar">
+        <select class="form-control" id="Indcategory">
+          <option disabled hidden selected>Select a Category</option>
+          <option value="Finance">Finance</option>
+          <option value="Human Resource">Human Resource</option>
+          <option value="Well Being">Well Being</option>
+          <option value="Work Ethics">Work Ethics</option>
+          <option value="Counselling">Counselling</option>
+          <option value="Trade">Trade</option>
+          <option value="Sales">Sales</option>
+          <option value="Revival">Revival</option>
+        </select>
+        <span id="categorys" class="text-danger font-weight-bold"></span>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" class="btn btn-primary" onclick="return IndValidation()">Submit</button>
     </form>
   </div>
 
